@@ -1,0 +1,58 @@
+experiment:
+  name: corafl_refinement_v2
+  datasets: [digits, breast_cancer, wine]
+  partitions: [iid, noniid]
+  scenarios: [nominal, one_domain]
+  methods:
+    - fedavg
+    - ring_gt
+    - random_gossip_gt
+    - exponential_gt
+    - matcha_gt
+    - adaptive_similarity_gt
+    - cora_fl_v1
+    - cora_fl
+  n_clients: 8
+  rounds: 100
+  eval_every: 5
+  split_seed: 20260910
+  main_seeds: [101, 202, 303, 404, 505]
+
+model:
+  batch_size: 16
+  l2: 0.0001
+
+partition:
+  dirichlet_alpha: 0.3
+  min_train_samples: 5
+
+topology:
+  n_domains: 4
+  mixing_window: 4
+  nominal_link_loss: 0.0
+  outage_link_loss: 0.05
+  outage_start_fraction: 0.35
+  outage_end_fraction: 0.65
+  coverage_weight: 2.0
+  domain_weight: 0.75
+  reliability_weight: 0.25
+  coverage_ema_rate: 0.2
+  reliability_ema_rate: 0.1
+
+pilot:
+  seed: 991
+  rounds: 60
+  eval_every: 10
+  learning_rates: [0.003, 0.01, 0.03, 0.1, 0.3, 1.0, 3.0, 10.0, 30.0, 100.0]
+  selection_metric: final_validation_loss
+  fail_on_upper_boundary: true
+  grid_note: >-
+    Development-only refinement using the previously inspected split and seeds.
+    These results cannot serve as confirmatory evidence.
+
+analysis:
+  confidence_level: 0.95
+  cvar_alpha: 0.8
+  recovery_fraction_of_nominal_final: 0.95
+  primary_dataset: digits
+  primary_partition: noniid

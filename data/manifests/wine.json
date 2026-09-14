@@ -1,0 +1,13 @@
+{
+  "fingerprint": "ab348b7902ae0bed5e02547b60f958147bd7089e4a911a469b0a8f31c63794a6",
+  "n_features": 13,
+  "n_outputs": 3,
+  "name": "wine",
+  "scope_warning": "Bundled classification benchmark; not a smart-city traffic result.",
+  "source": "scikit-learn bundled Wine recognition dataset",
+  "split_seed": 4144280299,
+  "task": "classification",
+  "test_samples": 36,
+  "train_samples": 124,
+  "validation_samples": 18
+}

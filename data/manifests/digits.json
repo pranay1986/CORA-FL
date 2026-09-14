@@ -1,0 +1,13 @@
+{
+  "fingerprint": "1640411b1f86ff156246ca36dc5d493448e9504bfe1b5819f21f651c38a1d19f",
+  "n_features": 64,
+  "n_outputs": 10,
+  "name": "digits",
+  "scope_warning": "Bundled classification benchmark; not a smart-city traffic result.",
+  "source": "scikit-learn bundled Digits dataset",
+  "split_seed": 4144280299,
+  "task": "classification",
+  "test_samples": 360,
+  "train_samples": 1257,
+  "validation_samples": 180
+}

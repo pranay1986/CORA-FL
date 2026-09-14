@@ -1,0 +1,43 @@
+status: blocked_until_real_files_are_present
+purpose: >-
+  Publication configuration for the smart-city traffic case study. This file is
+  intentionally not consumed by the development runner and contains no result
+  values. Supply genuine tensors and checksums before implementing the GRU run.
+
+datasets:
+  - name: METR-LA
+    path: data/raw/METR-LA.npz
+    expected_sensors: 207
+    expected_shape: "[time, 207] or [time, 207, features]"
+    checksum_sha256: REQUIRED
+    source_url: REQUIRED
+    license: REQUIRED
+  - name: PEMS-BAY
+    path: data/raw/PEMS-BAY.npz
+    expected_sensors: 325
+    expected_shape: "[time, 325] or [time, 325, features]"
+    checksum_sha256: REQUIRED
+    source_url: REQUIRED
+    license: REQUIRED
+  - name: PeMSD7-M
+    path: data/raw/PeMSD7-M.npz
+    expected_sensors:
+    expected_shape: "[time, sensors] or [time, sensors, features]"
+    checksum_sha256: REQUIRED
+    source_url: REQUIRED
+    license: REQUIRED
+
+task:
+  history_steps: 12
+  horizons: [3, 6, 12]
+  split: [0.70, 0.10, 0.20]
+  client_unit: one_sensor
+  normalization: train_only_per_sensor
+
+integrity:
+  synthetic_substitution_allowed: false
+  missing_value_policy: REQUIRED_BEFORE_RUN
+  source_url_and_license: REQUIRED_BEFORE_RUN
+  note: >-
+    Development results are algorithmic validation on bundled classification
+    data and must never be relabeled as traffic-forecasting results.

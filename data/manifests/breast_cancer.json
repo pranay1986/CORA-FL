@@ -1,0 +1,13 @@
+{
+  "fingerprint": "6c3de7016ffe9ede1b44e4ce01884336877ef2571b1effdfd64826aeb1e6380d",
+  "n_features": 30,
+  "n_outputs": 2,
+  "name": "breast_cancer",
+  "scope_warning": "Bundled classification benchmark; not a smart-city traffic result.",
+  "source": "scikit-learn bundled Breast Cancer Wisconsin Diagnostic dataset",
+  "split_seed": 4144280299,
+  "task": "classification",
+  "test_samples": 114,
+  "train_samples": 398,
+  "validation_samples": 57
+}

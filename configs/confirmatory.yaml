@@ -1,0 +1,93 @@
+experiment:
+  name: corafl_confirmatory_v1
+  datasets: [digits, breast_cancer, wine]
+  partitions: [iid, noniid, noniid_domain]
+  scenarios: [nominal, one_domain]
+  methods:
+    - fedavg
+    - ring_gt
+    - random_gossip_gt
+    - exponential_gt
+    - matcha_gt
+    - adaptive_similarity_gt
+    - cora_fl
+  n_clients: 8
+  rounds: 100
+  eval_every: 5
+  split_seed: 4144280299
+  main_seeds:
+    - 1647281841
+    - 3834135152
+    - 4205234828
+    - 3729392660
+    - 117581348
+    - 526489939
+    - 2174227166
+    - 3932856012
+    - 535148194
+    - 1792249135
+    - 1422958367
+    - 2443427454
+    - 908309109
+    - 3441792806
+    - 3838717993
+    - 1831513568
+    - 2436652746
+    - 826124188
+    - 928719174
+    - 4044901782
+    - 4040687253
+    - 641594844
+    - 875425316
+    - 2544915583
+    - 1748781706
+    - 1536590518
+    - 1258814290
+    - 4253351053
+    - 2548134997
+    - 2771872600
+
+model:
+  batch_size: 16
+  l2: 0.0001
+
+partition:
+  dirichlet_alpha: 0.3
+  min_train_samples: 5
+
+topology:
+  n_domains: 4
+  mixing_window: 4
+  nominal_link_loss: 0.0
+  outage_link_loss: 0.05
+  degraded_link_loss: 0.60
+  outage_start_fraction: 0.35
+  outage_end_fraction: 0.65
+  coverage_weight: 2.0
+  domain_weight: 0.75
+  reliability_weight: 0.25
+  coverage_ema_rate: 0.2
+  reliability_ema_rate: 0.1
+
+pilot:
+  seed: 4029430738
+  rounds: 60
+  eval_every: 10
+  learning_rates: [0.003, 0.01, 0.03, 0.1, 0.3, 1.0, 3.0, 10.0, 30.0, 100.0]
+  selection_metric: final_validation_loss
+  fail_on_boundary: true
+  grid_note: >-
+    Validation-only pilot on the new split. A method receives one learning rate
+    per dataset and partition, chosen by minimum final validation loss. The main
+    test curves remain unread until every selection is locked away from both
+    search-grid boundaries.
+
+analysis:
+  confidence_level: 0.95
+  recovery_fraction_of_nominal_final: 0.95
+  primary_dataset: digits
+  primary_partition: noniid_domain
+  primary_comparator: random_gossip_gt
+  noninferiority_margin: 0.005
+  primary_unit: three_dataset_macro_average_within_seed
+  multiplicity_correction: holm_within_metric_across_decentralized_peers
