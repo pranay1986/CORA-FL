@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\centering
+\caption{Paired CORA-FL final-accuracy comparisons using dataset-macro values within each locked seed. Holm adjustment covers decentralized peers.}
+\label{tab:confirmatory_inference}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Comparator & $\Delta$ accuracy & 95\% CI & Holm $p$ & Superior \\
+\midrule
+Ring-GT & -0.00045 & [-0.00318, +0.00229] & 1 & no \\
+Random-Gossip-GT & +0.00029 & [-0.00140, +0.00198] & 1 & no \\
+Exponential-GT & +0.00031 & [-0.00131, +0.00193] & 1 & no \\
+MATCHA-GT & -0.00161 & [-0.00403, +0.00081] & 1 & no \\
+Similarity-Adaptive-GT & +0.01547 & [+0.00921, +0.02174] & 5.519e-05 & yes \\
+\bottomrule
+\end{tabular}
+\end{table*}

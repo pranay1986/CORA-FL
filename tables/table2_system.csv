@@ -1,0 +1,8 @@
+method,total_mib,control_kib,messages,successful_edges,consensus,schedule_type,valid_domain_mappings,audited_domain_mappings,mapping_agnostic_certificate
+fedavg,2.837931315,0,1480,0,0,centralized,,105,False
+ring_gt,2.607828776,0,1360,268.3444444,1.017851496,deterministic,2,105,False
+random_gossip_gt,2.837931315,0,1480,317.4222222,0.2484064165,stochastic/data-adaptive,,105,False
+exponential_gt,2.684529622,0,1400,315.7222222,0.1703712395,deterministic,105,105,True
+matcha_gt,2.636292182,0,1375.6,294.7333333,0.2494184781,stochastic/data-adaptive,,105,False
+adaptive_similarity_gt,2.864748637,27.4609375,2960,350.9444444,7.220404107,stochastic/data-adaptive,,105,False
+cora_fl,2.797649384,13.73046875,2192,308.4,0.2434427818,deterministic,105,105,True

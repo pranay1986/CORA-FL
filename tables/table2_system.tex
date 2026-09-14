@@ -1,0 +1,19 @@
+\begin{table*}[t]
+\centering
+\caption{Communication, consensus, and exhaustive four-round connectivity audit over all 105 pair-domain mappings.}
+\label{tab:confirmatory_system}
+\small
+\begin{tabular}{lcccccc}
+\toprule
+Method & MiB & Control KiB & Messages & Success edges & Consensus & Certified mappings \\
+\midrule
+FedAvg (central) & 2.838 & 0.00 & 1480.0 & 0.0 & 0.00e+00 & -- \\
+Ring-GT & 2.608 & 0.00 & 1360.0 & 268.3 & 1.02e+00 & 2/105 \\
+Random-Gossip-GT & 2.838 & 0.00 & 1480.0 & 317.4 & 2.48e-01 & -- \\
+Exponential-GT & 2.685 & 0.00 & 1400.0 & 315.7 & 1.70e-01 & 105/105 \\
+MATCHA-GT & 2.636 & 0.00 & 1375.6 & 294.7 & 2.49e-01 & -- \\
+Similarity-Adaptive-GT & 2.865 & 27.46 & 2960.0 & 350.9 & 7.22e+00 & -- \\
+CORA-FL & 2.798 & 13.73 & 2192.0 & 308.4 & 2.43e-01 & 105/105 \\
+\bottomrule
+\end{tabular}
+\end{table*}
