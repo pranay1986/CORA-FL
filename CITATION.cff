@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this research code, please cite the accompanying paper after publication."
+title: "CORA-FL: Reproducible Research Code"
+type: software
+authors:
+  - family-names: Bhattacharya
+    given-names: Pronaya
+version: 0.1.0
+date-released: 2026-09-12
+license: MIT

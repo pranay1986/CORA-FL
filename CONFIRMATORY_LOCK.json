@@ -1,0 +1,13 @@
+{
+  "config_file_sha256": "7a77de41576b4c14fa5d66b2b60928a7f2002ca2a13d8acadb66725cf11c13f2",
+  "config_hash": "175c3ab21bf28904b6dce8689164cd2cce34e93197fc7c6f0e8bd8923323a1f3",
+  "expected_main_runs": 3780,
+  "expected_pilot_selections": 63,
+  "expected_pilot_trials": 630,
+  "implementation_hash": "0bbc44714f554cf3bbde1f8561049a6ed09afe6f6fa14065ea118c0577ad473e",
+  "locked_at_utc": "2026-09-12T22:18:22Z",
+  "primary_comparator": "random_gossip_gt",
+  "primary_partition": "noniid_domain",
+  "protocol_sha256": "c205c85b58888f555ed04a7b49ec563681426f7662308a474cb8fc02f5ed61f9",
+  "stage": "pre_results"
+}
